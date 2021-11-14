@@ -1,0 +1,145 @@
+.product {
+    border-radius: 5px;
+    box-shadow: gray 1px 1px 3px;
+    float: left;
+    margin: 1em;
+    font-size: 1.1em;
+    padding: 1em;
+    width: 300px;
+    height: 40em;
+    text-align: center;
+    font-family: 'TH Sarabun PSK', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product img {
+    width: 15em;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*ปุ่ม add to cart*/
+
+.add {
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*navbar*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E7C3AA;
+    height: 3.5em;
+}
+
+
+/*ไอคอนค้นหา*/
+
+li #search {
+    float: left;
+    margin: 10px;
+    margin-top: 13px;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+}
+
+
+/*หัวเรื่อง*/
+
+h1 {
+    text-align: center;
+    font-family: 'TH Sarabun PSK', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3.5em;
+}
+
+
+/*กล่อง Search*/
+
+#searchBar {
+    float: left;
+    margin: 2px
+}
+
+
+/** New Edition */
+
+
+/*ไอคอนตะกร้าสินค้า*/
+
+#cart {
+    position: relative;
+    float: right;
+    margin: 15px;
+    margin-right: -6px;
+}
+
+
+/*เลขบนตะกร้า*/
+
+#incart {
+    float: right;
+    margin-top: 10px;
+    position: relative;
+    background-color: red;
+    color: white;
+    margin-left: 0px;
+    border-radius: 10em;
+    z-index: 1;
+}
+
+
+/* dark mode*/
+
+body {
+    background-color: white;
+    color: black;
+}
+
+.switchMode {
+    background-color: black;
+    color: white;
+}
+
+
+/* .dark {
+    background-color: black;
+    color: white
+}
+
+.light {
+    background-color: white;
+    color: black
+} */
+
+
+/**สีปุ่ม dark mode*/
+
+.btnindark {
+    color: black;
+    background-color: white;
+}
+
+
+/**สีปุ่ม light mode*/
+
+.btninwhite {
+    color: white;
+    background-color: gray;
+}
+
+#clearBut {
+    float: right;
+    margin: 15px;
+}

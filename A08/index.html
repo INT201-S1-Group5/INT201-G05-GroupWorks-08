@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manipulating Elements</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li>
+            <img src="./image/icon/search.png" width="30px" height="30px" id="search">
+            <span id="searchBar" style="display: inline-block;"></span>
+            <!--ปุ่ม clear จำนวนของในตะกร้าสินค้า-->
+            <button onclick="deleteAllCookies()" id="clearBut">Clear</button>
+            <!--เลขแสดงจำนวนสินค้าที่อยู่ในตะกร้า-->
+            <span id="incart" style="display: inline-block;"></span>
+            <!--ตะกร้าสินค้า-->
+            <svg><img src="./image/icon/cart.png" width="30px" height="30px" id="cart"></svg>
+        </li>
+    </ul>
+    <br>
+    <!--ปุ่มเปลี่ยน theme สีเว็บ-->
+    <button onclick="theme()" id="theme" class="btninwhite" style="display: inline-block;">Switch Dark Mode</button>
+
+    <h1>UNIQLO Costume Collection</h1>
+    <div id="products"></div>
+
+    <script src="createTag.js" type="module"></script>
+    <script src="search.js" type="module"></script>
+    <script src="addCart.js" type="module"></script>
+    <script src="cookie.js"></script>
+    <script src="theme.js"></script>
+</body>
+
+</html>
