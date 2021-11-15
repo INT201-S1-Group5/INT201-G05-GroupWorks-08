@@ -1,34 +1,28 @@
+import { CookieUtil } from "./cookie.js"
+
 let addCart = document.querySelectorAll(".add");
 let cartNumbers = document.querySelector("#cart");
 let cartEle = document.querySelector('#incart');
 let productList = document.querySelectorAll(".product");
 
-let amount = 0;
+let total = 0;
 let cartCollect = {
     cart: [],
-    id: []
+    id: [],
+    total: CookieUtil.get("total")
 };
 
-cartEle.innerHTML = amount;
+cartEle.innerHTML = total;
 for (let i = 0; i < addCart.length; i++) {
     addCart[i].addEventListener("click", () => {
         alert(`เพิ่มสินค้า 1 ชิ้น`);
-        amount += 1;
-        cartEle.innerHTML = amount;
-
-        // function listCookies() {
-        //     var theCookies = document.cookie.split(';');
-        //     var aString = '';
-        //     for (var i = 1; i <= theCookies.length; i++) {
-        //         aString += i + ' ' + theCookies[i - 1] + "\n";
-        //     }
-        //     return aString;
-        // }
+        total += 1;
+        cartEle.innerHTML = total;
 
         let productID = productList[i].id;
         if (cartCollect.id.includes(productID)) {
             let id = cartCollect.id.indexOf(productID);
-            cartCollect.cart[id].amount += 1;
+            cartCollect.cart[id].total += 1;
         } else {
             cartCollect.id.push(productID);
             cartCollect.cart.push({
@@ -36,13 +30,24 @@ for (let i = 0; i < addCart.length; i++) {
                     productID: productID,
                     productName: productList[i].getElementsByClassName(productID)[0].textContent,
                 },
-                amount: 1
+                total: 1
             });
+            CookieUtil.set("productID", cartCollect.id, 1); // เก็บรหัสสินค้าในคุกกี้
         }
-        setCookie("amount", amount, 365);
+        CookieUtil.set("total", total, 365);
     }, true)
+
 }
 
+if (cartCollect.total != 0) {
+    cartEle.innerHTML = CookieUtil.get("total");
+} else {
+    total += 1;
+}
+
+
 cartNumbers.addEventListener("click", () => {
-    console.log(cartCollect);
+    // alert(console.log(cartCollect))
+    console.log(cartCollect)
+    console.log(document.cookie) // username, total, productID
 }, true);
